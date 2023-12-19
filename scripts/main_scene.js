@@ -26,9 +26,33 @@ class MainScene extends Phaser.Scene {
    this.hanako = hanako
    }
 
+   arrow_move(cursors, object){
+    if(cursors.up.isDown){
+        console.log("Up!!");
+        object.setVelocityY(-200);// 上方向の速度を設定
+
+    }else if(cursors.down.isDown){
+        console.log("down!!");
+        object.setVelocityY(200);// 下方向の速度を設定
+
+    }else if(cursors.left.isDown){
+        console.log("Left");
+        object.setVelocityX(-200);// 左方向の速度を
+    }else if(cursors.right.isDown){
+        console.log("Right!!");
+        object.setVelocityX(200);// 右方向の速度を設定
+
+    }else{
+        object.setVelocity(0,0);// 
      // 毎フレーム実行される繰り返し処理
+    }
+
+}
     update(time, delta) {
-        
+        // キーボードの情報を取得
+        let cursors = this.input.keyboard.createCursorKeys();
+// 矢印キーのカーソル情報とplayerスプライトをarrow_move()メソッドに渡す
+        this.arrow_move(cursors, this.taro);
     }
 
 }
