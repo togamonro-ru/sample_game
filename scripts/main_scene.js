@@ -19,7 +19,6 @@ class MainScene extends Phaser.Scene {
     create() {
       // 単体画像をシーンに追加(X座標,Y座標,画像名)
       this.add.image(400, 300, 'back');
-      // taroの画像を物理演算を持った画像にする
       const taro = this.physics.add.sprite(50, 50, 'taro');
       this.taro = taro
       const hanako = this.physics.add.sprite(750, 400, 'hanako');
