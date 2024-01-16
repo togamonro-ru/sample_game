@@ -45,6 +45,12 @@ class MainScene extends Phaser.Scene {
       this.physics.pause();
     }
 
+    this.physics.add.overlap(hanako, staticGroup, runitems, null, this);
+    function runitems() {
+      //物理エンジンを止める
+      this.physics.pause();
+    }
+
     
     // this.physics.add.overlap(hanako, staticGroup, runitems, null, this);
     // function runitems() {
